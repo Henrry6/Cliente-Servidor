@@ -1,18 +1,20 @@
+let  calculoFibo = (req,res) =>    {
 
-var primerElemento = 1;
-var segundoElemento = 2;
-var maximoValorSerie = 100;
+                                      
+var primerElemento = parseInt(req.body.valor1);
+var segundoElemento = parseInt (req.body.valor2);
+var maximoValorSerie = parseInt (req.body.valormax);                                                                                    
 
 var resultado = {
     sumaPares : 0,
     listaPares : [],
-    listaTodos : []    
+    listaTodos : [],
 }
 
 
 var esPar = function(numero){
     if (numero%2 === 0) {
-        return true;
+        return true
     } else {
         return false;
     }
@@ -45,3 +47,9 @@ var pares = function() {
 console.log(generadorFibonacci(primerElemento,segundoElemento));
 console.log(esPar(segundoElemento));
 console.log(pares());
+res.send(resultado);
+}
+
+module.exports = {
+    calculoFibo,
+}

@@ -4,6 +4,7 @@ const express = require('express');
 const bodyParser = require('body-parser');
 const morgan = require('morgan');
 var cors = require('cors')
+var rutas = require('./fibo.js')
 // expoFibo = require('./codefibo')
 
 
@@ -18,7 +19,7 @@ var corsOptions = {
 }
 
 
-app.use(require('./fibo'))
+app.use( '' , rutas)
 // app.post('/fibo', function (req,res) {
 //     var data1 =req.body.valor1
 // var data2= req.body.valor2
@@ -30,11 +31,6 @@ app.use(require('./fibo'))
 app.get('/fibo', function (req,res) {
     res.send('hola');
 });
-
-
-
-// api.post('/fibonacci-calculo',fiboControl.calculoFibo)
-// api.post('/traer-datos',fiboControl.traerDatos)
 
 app.get('/', (req,res) => {
     res.send('Pagina principal')
