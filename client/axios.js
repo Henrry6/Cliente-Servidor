@@ -13,8 +13,7 @@ document.getElementById("botonSolver").addEventListener(
 
           })
           .then(function (response) {
-            console.log(response);
-           
+            console.log (response.data);
           })
           .catch(function (error) {
             console.log(error);
@@ -22,4 +21,6 @@ document.getElementById("botonSolver").addEventListener(
     }
     
 );
+
+
 
